@@ -115,6 +115,94 @@ function searchByName(people) {
 }
 // End of searchByName()
 
+function searchByTraits(people){
+
+    let  traitSelection = promptFor(
+        "Which trait do you know? id, first name, last name, gender, date of birth, height, weight, eyeColor, occupation, parents, currentSpouse",
+        chars
+    )
+    
+    switch (traitSelection){
+        case "id":
+        let id  = promptFor("What is the person's id?", chars)   
+        let foundPerson = people.filter(function(person){
+                if (person.id === parseFloat(id)){
+                    return true;
+                }
+                
+            })
+            return foundPerson
+        case "first name":
+        case "last name":
+        case "gender":
+        case "date of birth":
+        case "height":
+        case "weight":
+        case "eyeColor":
+        case "occupation":
+        case "parents":
+        case "currentSpouse":
+
+    }
+   
+    
+
+    let idRequest = promptFor("What is the person's id?", chars)
+    let firstNameRequest = promptFor("What is the person's first name?", chars)
+    let lastNameRequest = promptFor("What is the person's last name?",chars)
+    let genderRequest = promptFor("What is the person's gender",chars)
+    let dobRequest = promptFor("What is the person's date of birth?, XX/XX/XXXX",chars)
+    let heightRequest = promptFor("What is the person's height?",chars)
+    let weightrequest = promptFor("What is the person's weight?",chars)
+    let eyeColor = promptFor("What is the person's eye color?",chars)
+    let occupation = promptFor("What is the person's occupation?",chars)
+    let parents = promptFor("What is the person's parents' id? ",chars)
+    let currentSpouse = promptFor("What is the person's spouse?",chars)
+
+    let foundPerson = people.filter(function(person) {
+        if (idRequest||firstNameRequest||lastNameRequest||genderRequest||dobRequest||heightRequest||weightrequest||eyeColor||occupation||parents||currentSpouse  === person.property ){
+            return true
+        } 
+        return foundPerson
+    })
+    
+}
+
+
+       
+        
+    
+
+    // function searchByTraits(people) {
+
+    //     var listed = "";
+    //     var filteredList;
+    
+    //     filteredList = searchByHeight(filteredList);
+    //     filteredList = searchByWeight(filteredList);
+    //     filteredList = searchByOccupation(filteredList);
+    //     filteredList = searchByEyeColor(filteredList);
+    
+    //     if (filteredList.length === 22) {
+    //         alert("You said no to all filters, there is no one to display.");
+    //     }
+    //     else if (filteredList.length === 0) {
+    //         alert("There is no one that meets your criteria.");
+    //     }
+    //     else {
+    //         for (var i = 0; i < filteredList.length; i++) {
+    //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
+    //         }
+    //         alert(listed);
+    //     }
+    
+    //   return foundPerson
+
+    // }
+    
+    
+
+
 /**
  * This function will be useful for STRINGIFYING a collection of person-objects
  * first and last name properties in order to easily send the information
@@ -184,3 +272,7 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+function Integer(input){
+    return input.Integer() 
+}
