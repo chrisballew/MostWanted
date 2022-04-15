@@ -206,7 +206,9 @@ function searchByTraits(people){
                     if (person.id === parseFloat(id)){
                         return true;
                     }
-                    else
+                    else {
+
+                    }
                 })
                      return foundPerson 
                
@@ -232,16 +234,6 @@ function searchByTraits(people){
                     break;
                     
             case "gender":
-                let gender  = promptFor("What is the person's gender?", chars)   
-                foundPerson = people.filter(function(person){
-                        if (person.gender === gender){
-                            return true;
-                        }
-                        else {
-                            return foundPerson
-                        }
-                    })
-                    break;
                     
             case "date of birth":
                 let dateOfBirth  = promptFor("What is the person's date of birth,?", chars)   
@@ -352,3 +344,97 @@ function searchByTraits(people){
         //   return foundPerson
     
         // }
+
+
+function searchByTraits(people) {
+    let listOfPeople = "";
+    let filteredPeople;
+
+    filteredPeople = searchByGender(people);
+    filteredPeople = searchByDOB(filteredPeople);
+    filteredPeople = searchByHeight(filteredPeople);
+    filteredPeople = searchByWeight(filteredPeople);
+    filteredPeople = searchByEyeColor(filteredPeople);
+    filteredPeople = searchByOccupation(filteredPeople);
+    filteredPeople = searchByParents(filteredPeople);
+    filteredPeople = searchBySiblings(filteredPeople);
+    filteredPeople = }
+
+
+
+
+
+function searchByGender(people){
+let gender  = promptFor("What is the person's gender?", chars)   
+foundPerson = people.filter(function(person){
+        if (person.gender === gender){
+            return true;
+        }
+
+            return foundPerson
+        }
+    })
+
+
+function searchByTraits(people){
+    let searchResults;
+    let userInput = prompt(
+        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, or Occupation? Or, press 1 to search multiple traits"
+    );
+    userInput.toLocaleLowerCase();
+    switch(userInput) {
+        case "1":
+            searchResults = multiTrait(people);
+            if(searchResults.length === 0){
+                alert("No individuals match this search!")
+                
+            }else
+                displayTraitPeople(searchResults)
+            break
+        case "gender":
+            searchResults = searchByGender(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+        case "DOB":
+            searchResults = searchByDOB(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+        case "Weight":
+            searchResults = searchByWeight(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+        case "Height":
+            searchResults = searchByHeight(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+        case "Eye Color":
+            searchResults = searchByEyeColor(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+        case "Occupation":
+            searchResults = searchByOccupation(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
+            
+    
+            }
+            }
+    
