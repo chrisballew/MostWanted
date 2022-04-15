@@ -115,92 +115,8 @@ function searchByName(people) {
 }
 // End of searchByName()
 
-function searchByTraits(people){
-
-    let  traitSelection = promptFor(
-        "Which trait do you know? id, first name, last name, gender, date of birth, height, weight, eyeColor, occupation, parents, currentSpouse",
-        chars
-    )
-    
-    switch (traitSelection){
-        case "id":
-        let id  = promptFor("What is the person's id?", chars)   
-        let foundPerson = people.filter(function(person){
-                if (person.id === parseFloat(id)){
-                    return true;
-                }
-                
-            })
-            return foundPerson
-        case "first name":
-        case "last name":
-        case "gender":
-        case "date of birth":
-        case "height":
-        case "weight":
-        case "eyeColor":
-        case "occupation":
-        case "parents":
-        case "currentSpouse":
-
-    }
-   
-    
-
-    let idRequest = promptFor("What is the person's id?", chars)
-    let firstNameRequest = promptFor("What is the person's first name?", chars)
-    let lastNameRequest = promptFor("What is the person's last name?",chars)
-    let genderRequest = promptFor("What is the person's gender",chars)
-    let dobRequest = promptFor("What is the person's date of birth?, XX/XX/XXXX",chars)
-    let heightRequest = promptFor("What is the person's height?",chars)
-    let weightrequest = promptFor("What is the person's weight?",chars)
-    let eyeColor = promptFor("What is the person's eye color?",chars)
-    let occupation = promptFor("What is the person's occupation?",chars)
-    let parents = promptFor("What is the person's parents' id? ",chars)
-    let currentSpouse = promptFor("What is the person's spouse?",chars)
-
-    let foundPerson = people.filter(function(person) {
-        if (idRequest||firstNameRequest||lastNameRequest||genderRequest||dobRequest||heightRequest||weightrequest||eyeColor||occupation||parents||currentSpouse  === person.property ){
-            return true
-        } 
-        return foundPerson
-    })
-    
-}
 
 
-       
-        
-    
-
-    // function searchByTraits(people) {
-
-    //     var listed = "";
-    //     var filteredList;
-    
-    //     filteredList = searchByHeight(filteredList);
-    //     filteredList = searchByWeight(filteredList);
-    //     filteredList = searchByOccupation(filteredList);
-    //     filteredList = searchByEyeColor(filteredList);
-    
-    //     if (filteredList.length === 22) {
-    //         alert("You said no to all filters, there is no one to display.");
-    //     }
-    //     else if (filteredList.length === 0) {
-    //         alert("There is no one that meets your criteria.");
-    //     }
-    //     else {
-    //         for (var i = 0; i < filteredList.length; i++) {
-    //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
-    //         }
-    //         alert(listed);
-    //     }
-    
-    //   return foundPerson
-
-    // }
-    
-    
 
 
 /**
@@ -212,7 +128,7 @@ function searchByTraits(people){
 function displayPeople(people) {
     alert(
         people
-            .map(function (person) {
+        .map(function (person) {
                 return `${person.firstName} ${person.lastName}`;
             })
             .join("\n")
@@ -272,7 +188,167 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+    
+    
+       
 
-function Integer(input){
-    return input.Integer() 
-}
+function searchByTraits(people){
+
+        let  traitSelection = promptFor(
+            "Which trait do you know? id, first name, last name, gender, date of birth, height, weight, eyeColor, occupation, parents, currentSpouse",
+            chars
+        )
+        
+        switch (traitSelection){
+            case "id":
+            let id  = promptFor("What is the person's id?", chars)   
+            let foundPerson = people.filter(function(person){
+                    if (person.id === parseFloat(id)){
+                        return true;
+                    }
+                    else
+                })
+                     return foundPerson 
+               
+              
+            case "first name":
+                let firstName  = promptFor("What is the person's first name?", chars)   
+                foundPerson = people.filter(function(person){
+                        if (person.firstName === firstName){
+                            return true;
+                        }
+                        return foundPerson
+                    })
+                    
+            case "last name":
+                let lastName  = promptFor("What is the person's last name?", chars)   
+                foundPerson = people.filter(function(person){
+                        if (person.lastName === lastName){
+                            return true;
+                        }
+                        return foundPerson;
+                      
+                    })
+                    break;
+                    
+            case "gender":
+                let gender  = promptFor("What is the person's gender?", chars)   
+                foundPerson = people.filter(function(person){
+                        if (person.gender === gender){
+                            return true;
+                        }
+                        else {
+                            return foundPerson
+                        }
+                    })
+                    break;
+                    
+            case "date of birth":
+                let dateOfBirth  = promptFor("What is the person's date of birth,?", chars)   
+                foundPerson = people.filter(function(person){
+                        if (person.dob === dateOfBirth){
+                            return true;
+                        }
+                        return foundPerson
+                    })
+                    break;
+                    
+            case "height":
+                let height  = promptFor("What is the person's height?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.height === parseFloat(height)){
+                        return true;
+                    }
+                     return foundPerson
+                })
+                break;
+               
+            case "weight":
+                let weight  = promptFor("What is the person's weight?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.weight === parseFloat(weight)){
+                        return true;
+                    }
+                     return foundPerson
+                })
+                break;
+               
+            case "eyeColor":
+                let eyeColor  = promptFor("What is the person's eye color?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.eyeColor === eyeColor){
+                        return true;
+                    }
+                    return foundPerson
+                })
+                break;
+                
+            case "occupation":
+                let occupation  = promptFor("What is the person's occupation?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.occupation === occupation){
+                        return true;
+                    }
+                    return foundPerson
+                })
+                break;
+                
+            case "parents":
+                let parents  = promptFor("Who is the person's parents?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.parents === parceFloat(parents)){
+                        return true;
+                    }
+                    return foundPerson
+                })
+                
+                break;
+            case "currentSpouse":
+                let currentSpouse  = promptFor("What is the person's current spouse?", chars)   
+                foundPerson = people.filter(function(person){
+                    if (person.currentSpouse === currentSpouse){
+                        return true;
+                    }
+                  return foundPerson  
+                })
+                break;
+
+        }
+       
+    }    
+    
+        
+        
+    
+    
+    
+           
+            
+        
+    
+        // function searchByTraits(people) {
+    
+        //     var listed = "";
+        //     var filteredList;
+        
+        //     filteredList = searchByHeight(filteredList);
+        //     filteredList = searchByWeight(filteredList);
+        //     filteredList = searchByOccupation(filteredList);
+        //     filteredList = searchByEyeColor(filteredList);
+        
+        //     if (filteredList.length === 22) {
+        //         alert("You said no to all filters, there is no one to display.");
+        //     }
+        //     else if (filteredList.length === 0) {
+        //         alert("There is no one that meets your criteria.");
+        //     }
+        //     else {
+        //         for (var i = 0; i < filteredList.length; i++) {
+        //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
+        //         }
+        //         alert(listed);
+        //     }
+        
+        //   return foundPerson
+    
+        // }
