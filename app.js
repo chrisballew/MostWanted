@@ -315,8 +315,15 @@ foundPerson = people.filter(function(person){
         if (person.dob === dob){
             return true;
         }
-        alert(foundPerson)
-    })
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
     app(people)
 }
 function searchByHeight(people){
@@ -329,44 +336,81 @@ function searchByHeight(people){
     })
     app(people)
 }
+
+
 function searchByEyeColor(people){
     let eyeColor  = promptFor("What is the person's eye color?", chars)   
     foundPerson = people.filter(function(person){
         if (person.eyeColor === eyeColor){
             return true;
         }
-        alert(foundPerson)
-    })
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
     app(people)
 }
+
+
 function searchByOccupation(people){
     let occupation  = promptFor("What is the person's occupation?", chars)   
     foundPerson = people.filter(function(person){
         if (person.occupation === occupation){
             return true;
         }
-        alert(foundPerson)
-    })
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
     app(people)
 }
+
+
 function searchByParents(people){
     let parents  = promptFor("Who is the person's parents?", chars)   
     foundPerson = people.filter(function(person){
         if (person.parents === parents){
             return true;
         }
-        alert(foundPerson)
-    })
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
     app(people)
 }
+}
+
+
 function searchByCurrentSpouse(people){
     let currentSpouse  = promptFor("What is the person's current spouse?", chars)   
     foundPerson = people.filter(function(person){
         if (person.currentSpouse === currentSpouse){
             return true;
         }
-        alert(foundPerson)
-    })
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
     app(people)
 }
     
