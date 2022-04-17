@@ -189,208 +189,31 @@ function chars(input) {
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
     
-    
-       
 
-function searchByTraits(people){
-
-        let  traitSelection = promptFor(
-            "Which trait do you know? id, first name, last name, gender, date of birth, height, weight, eyeColor, occupation, parents, currentSpouse",
-            chars
-        )
-        
-        switch (traitSelection){
-            case "id":
-            let id  = promptFor("What is the person's id?", chars)   
-            let foundPerson = people.filter(function(person){
-                    if (person.id === parseFloat(id)){
-                        return true;
-                    }
-                    else {
-
-                    }
-                })
-                     return foundPerson 
-               
-              
-            case "first name":
-                let firstName  = promptFor("What is the person's first name?", chars)   
-                foundPerson = people.filter(function(person){
-                        if (person.firstName === firstName){
-                            return true;
-                        }
-                        return foundPerson
-                    })
-                    
-            case "last name":
-                let lastName  = promptFor("What is the person's last name?", chars)   
-                foundPerson = people.filter(function(person){
-                        if (person.lastName === lastName){
-                            return true;
-                        }
-                        return foundPerson;
-                      
-                    })
-                    break;
-                    
-            case "gender":
-                    
-            case "date of birth":
-                let dateOfBirth  = promptFor("What is the person's date of birth,?", chars)   
-                foundPerson = people.filter(function(person){
-                        if (person.dob === dateOfBirth){
-                            return true;
-                        }
-                        return foundPerson
-                    })
-                    break;
-                    
-            case "height":
-                let height  = promptFor("What is the person's height?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.height === parseFloat(height)){
-                        return true;
-                    }
-                     return foundPerson
-                })
-                break;
-               
-            case "weight":
-                let weight  = promptFor("What is the person's weight?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.weight === parseFloat(weight)){
-                        return true;
-                    }
-                     return foundPerson
-                })
-                break;
-               
-            case "eyeColor":
-                let eyeColor  = promptFor("What is the person's eye color?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.eyeColor === eyeColor){
-                        return true;
-                    }
-                    return foundPerson
-                })
-                break;
-                
-            case "occupation":
-                let occupation  = promptFor("What is the person's occupation?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.occupation === occupation){
-                        return true;
-                    }
-                    return foundPerson
-                })
-                break;
-                
-            case "parents":
-                let parents  = promptFor("Who is the person's parents?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.parents === parceFloat(parents)){
-                        return true;
-                    }
-                    return foundPerson
-                })
-                
-                break;
-            case "currentSpouse":
-                let currentSpouse  = promptFor("What is the person's current spouse?", chars)   
-                foundPerson = people.filter(function(person){
-                    if (person.currentSpouse === currentSpouse){
-                        return true;
-                    }
-                  return foundPerson  
-                })
-                break;
-
-        }
-       
-    }    
-    
-        
-        
-    
-    
-    
-           
-            
-        
-    
-        // function searchByTraits(people) {
-    
-        //     var listed = "";
-        //     var filteredList;
-        
-        //     filteredList = searchByHeight(filteredList);
-        //     filteredList = searchByWeight(filteredList);
-        //     filteredList = searchByOccupation(filteredList);
-        //     filteredList = searchByEyeColor(filteredList);
-        
-        //     if (filteredList.length === 22) {
-        //         alert("You said no to all filters, there is no one to display.");
-        //     }
-        //     else if (filteredList.length === 0) {
-        //         alert("There is no one that meets your criteria.");
-        //     }
-        //     else {
-        //         for (var i = 0; i < filteredList.length; i++) {
-        //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
-        //         }
-        //         alert(listed);
-        //     }
-        
-        //   return foundPerson
-    
-        // }
 
 
 function searchByTraits(people) {
     let listOfPeople = "";
     let filteredPeople;
 
-    filteredPeople = searchByGender(people);
-    filteredPeople = searchByDOB(filteredPeople);
-    filteredPeople = searchByHeight(filteredPeople);
-    filteredPeople = searchByWeight(filteredPeople);
-    filteredPeople = searchByEyeColor(filteredPeople);
-    filteredPeople = searchByOccupation(filteredPeople);
-    filteredPeople = searchByParents(filteredPeople);
-    filteredPeople = searchBySiblings(filteredPeople);
-    filteredPeople = }
 
 
 
-
-
-function searchByGender(people){
-let gender  = promptFor("What is the person's gender?", chars)   
-foundPerson = people.filter(function(person){
-        if (person.gender === gender){
-            return true;
-        }
-
-            return foundPerson
-        }
-    })
-
-
-function searchByTraits(people){
     let searchResults;
     let userInput = prompt(
-        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, or Occupation? Or, press 1 to search multiple traits"
+        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, or Occupation?"
     );
-    userInput.toLocaleLowerCase();
+    //  Or, press 1 to search multiple traits
+    userInput.toLowerCase();
     switch(userInput) {
-        case "1":
-            searchResults = multiTrait(people);
-            if(searchResults.length === 0){
-                alert("No individuals match this search!")
+        // case "1":
+        //     searchResults = multiTrait(people);
+        //     if(searchResults.length === 0){
+        //         alert("No individuals match this search!")
                 
-            }else
-                displayTraitPeople(searchResults)
-            break
+        //     }else
+        //         displayTraitPeople(searchResults)
+        //     break
         case "gender":
             searchResults = searchByGender(people);
             if (searchResults.length === 0){
@@ -436,5 +259,118 @@ function searchByTraits(people){
             
     
             }
-            }
+ }
+
+            
+
+        // function multiTrait(people){
+       
     
+        //     var listed = "";
+        //     var filteredPeople;
+        
+        //     filteredPeople = searchByGender(filteredPeople);
+        //     filteredPeople = searchByDOB(filteredPeople);
+        //     filteredPeople = searchByHeight(filteredPeople);
+        //     filteredPeople = searchByWeight(filteredPeople);
+        //     filteredPeople = searchByEyeColor(filteredPeople);
+        //     filteredPeople = searchByOccupation(filteredPeople);
+        //     filteredPeople = searchByParents(filteredPeople);
+        //     filteredPeople = searchByCurrentSpouse(filteredPeople)
+
+        //     if (filteredList.length === 22) {
+        //         alert("You said no to all filters, there is no one to display.");
+        //     }           
+        //     else {
+        //         for (var i = 0; i < filteredList.length; i++) {
+        //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
+        //         }
+        //         alert(listed);
+        //     }
+        
+        //   app(people)
+    
+        // }
+
+function searchByGender(people){
+let gender  = promptFor("What is the person's gender?", chars)   
+let foundPerson = people.filter(function(person){
+        if (person.gender === gender){
+            return true;
+        }
+    }
+    
+    )
+    for (let i = 0; i < foundPerson.length; i++) {
+        var listed ;
+        listed += foundPerson[i].firstName + " " + foundPerson[i].lastName + ".";
+    }
+    alert(listed);
+
+    app(people)
+}
+function searchByDOB(people){
+let dob  = promptFor("What is the person's date of birth?", chars)   
+foundPerson = people.filter(function(person){
+        if (person.dob === dob){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+function searchByHeight(people){
+    let height  = promptFor("What is the person's height?", chars)   
+    foundPerson = people.filter(function(person){
+        if (person.height === height){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+function searchByEyeColor(people){
+    let eyeColor  = promptFor("What is the person's eye color?", chars)   
+    foundPerson = people.filter(function(person){
+        if (person.eyeColor === eyeColor){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+function searchByOccupation(people){
+    let occupation  = promptFor("What is the person's occupation?", chars)   
+    foundPerson = people.filter(function(person){
+        if (person.occupation === occupation){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+function searchByParents(people){
+    let parents  = promptFor("Who is the person's parents?", chars)   
+    foundPerson = people.filter(function(person){
+        if (person.parents === parents){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+function searchByCurrentSpouse(people){
+    let currentSpouse  = promptFor("What is the person's current spouse?", chars)   
+    foundPerson = people.filter(function(person){
+        if (person.currentSpouse === currentSpouse){
+            return true;
+        }
+        alert(foundPerson)
+    })
+    app(people)
+}
+    
+
+
+
+
