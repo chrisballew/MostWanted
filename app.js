@@ -204,7 +204,7 @@ function searchByTraits(people) {
 
     let searchResults;
     let userInput = prompt(
-        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, or Occupation?"
+        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, Occupation or Parents?"
     );
     //  Or, press 1 to search multiple traits
     userInput.toLowerCase();
@@ -259,7 +259,13 @@ function searchByTraits(people) {
             }else
             displayTraitPeople(searchResults)
             break
-            
+        case "Parents":
+            searchResults = searchByParents(people);
+            if (searchResults.length === 0){
+                alert("No individuals match this search!")
+            }else
+            displayTraitPeople(searchResults)
+            break
     
             }
  }
@@ -382,7 +388,7 @@ function searchByOccupation(people){
 function searchByParents(people){
     let parents  = promptFor("Who is the person's parents?", chars)   
     foundPerson = people.filter(function(person){
-        if (person.parents === parents){
+        if (person.parents === parceFloat(parents)){
             return true;
         }
     }
@@ -443,6 +449,3 @@ function findPersonDescendants(personArray, people){
     })
 }
 
-function searchByParents(person, people){
-    
-}
