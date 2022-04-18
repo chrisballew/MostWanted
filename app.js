@@ -417,9 +417,9 @@ function searchByCurrentSpouse(people){
     app(people)
 }
 
-function findPersonFamily(person, people){
+function findPersonFamily(personArray, people){
     let personFamily = people.filter(function(person){
-    if (person.lastName === people.lastName){
+    if (personArray.lastName === person.lastName){
         return true;
     }
 
