@@ -418,7 +418,7 @@ function searchByCurrentSpouse(people){
 }
 
 function findPersonFamily(person, people){
-    var personFamily = people.filter(function(person){
+    let personFamily = people.filter(function(person){
     if (person.lastName === people.lastName){
         return true;
     }
@@ -426,7 +426,8 @@ function findPersonFamily(person, people){
     }
 
     )
-    displayPeople(personFamily)
+  
+    return personFamily
 }
     
 
