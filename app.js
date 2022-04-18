@@ -433,8 +433,16 @@ function findPersonFamily(personArray, people){
     }
     return listed
 }
+
+function findPersonDescendants(personArray, people){
+    var listed = "";
+    let personFamily = people.filter(function(person){
+        if (personArray.id === people.parents.id){
+            return true;
+       }
+    })
+}
+
+function searchByParents(person, people){
     
-
-
-
-
+}
