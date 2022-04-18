@@ -204,19 +204,19 @@ function searchByTraits(people) {
 
     let searchResults;
     let userInput = prompt(
-        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, Occupation or Parents?"
+        "Do you want to search by Gender, DOB, Height, Weight, Eye Color, Occupation or Parents? Or, press 1 to search multiple traits"
+       
     );
-    //  Or, press 1 to search multiple traits
     userInput.toLowerCase();
     switch(userInput) {
-        // case "1":
-        //     searchResults = multiTrait(people);
-        //     if(searchResults.length === 0){
-        //         alert("No individuals match this search!")
+        case "1":
+            searchResults = multiTrait(people);
+            if(searchResults.length === 0){
+                alert("No individuals match this search!")
                 
-        //     }else
-        //         displayTraitPeople(searchResults)
-        //     break
+            }else
+                displayTraitPeople(searchResults)
+            break
         case "gender":
             searchResults = searchByGender(people);
             if (searchResults.length === 0){
@@ -272,34 +272,34 @@ function searchByTraits(people) {
 
             
 
-        // function multiTrait(people){
+        function multiTrait(people){
        
     
-        //     var listed = "";
-        //     var filteredPeople;
+            var listed = "";
+            var filteredPeople;
         
-        //     filteredPeople = searchByGender(filteredPeople);
-        //     filteredPeople = searchByDOB(filteredPeople);
-        //     filteredPeople = searchByHeight(filteredPeople);
-        //     filteredPeople = searchByWeight(filteredPeople);
-        //     filteredPeople = searchByEyeColor(filteredPeople);
-        //     filteredPeople = searchByOccupation(filteredPeople);
-        //     filteredPeople = searchByParents(filteredPeople);
-        //     filteredPeople = searchByCurrentSpouse(filteredPeople)
+            filteredPeople = searchByGender(filteredPeople);
+            filteredPeople = searchByDOB(filteredPeople);
+            filteredPeople = searchByHeight(filteredPeople);
+            filteredPeople = searchByWeight(filteredPeople);
+            filteredPeople = searchByEyeColor(filteredPeople);
+            filteredPeople = searchByOccupation(filteredPeople);
+            filteredPeople = searchByParents(filteredPeople);
+            filteredPeople = searchByCurrentSpouse(filteredPeople)
 
-        //     if (filteredList.length === 22) {
-        //         alert("You said no to all filters, there is no one to display.");
-        //     }           
-        //     else {
-        //         for (var i = 0; i < filteredList.length; i++) {
-        //             listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
-        //         }
-        //         alert(listed);
-        //     }
+            if (filteredList.length === 22) {
+                alert("You said no to all filters, there is no one to display.");
+            }           
+            else {
+                for (var i = 0; i < filteredList.length; i++) {
+                    listed += filteredList[i].firstName + " " + filteredList[i].lastName + ". ";
+                }
+                alert(listed);
+            }
         
-        //   app(people)
+          app(people)
     
-        // }
+        }
 
 function searchByGender(people){
 let gender  = promptFor("What is the person's gender?", chars)   
