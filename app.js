@@ -418,16 +418,20 @@ function searchByCurrentSpouse(people){
 }
 
 function findPersonFamily(personArray, people){
+    var listed = "";
     let personFamily = people.filter(function(person){
-    if (personArray.lastName === person.lastName){
+        if (personArray.lastName === person.lastName){
         return true;
     }
 
     }
 
     )
-  
-    return personFamily
+    for (let i = 0; i < personFamily.length; i++) {
+        
+        listed += personFamily[i].firstName + " " + personFamily[i].lastName + ".";
+    }
+    return listed
 }
     
 
