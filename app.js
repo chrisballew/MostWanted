@@ -416,6 +416,18 @@ function searchByCurrentSpouse(people){
 
     app(people)
 }
+
+function findPersonFamily(person, people){
+    var personFamily = people.filter(function(person){
+    if (person.lastName === people.lastName){
+        return true;
+    }
+
+    }
+
+    )
+    displayPeople(personFamily)
+}
     
 
 
