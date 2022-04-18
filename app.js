@@ -144,7 +144,15 @@ function displayPeople(people) {
 function displayPerson(person) {
     let personInfo = `First Name: ${person.firstName}\n`;
     personInfo += `Last Name: ${person.lastName}\n`;
-    //! TODO #1a: finish getting the rest of the information to display //////////////////////////////////////////
+    personInfo += `Gender: ${person.gender}\n`;
+    personInfo += `DOB: ${person.dob}\n`;
+    personInfo += `Height: ${person.height}\n`;
+    personInfo += `Weight: ${person.weight}\n`;
+    personInfo += `Eye Color: ${person.eyeColor}\n`;
+    personInfo += `Occupation: ${person.occupation}\n`;
+    personInfo += `Parents: ${person.parents}\n`;
+    personInfo += `Spouse: ${person.spouse}\n`;
+    
     alert(personInfo);
 }
 // End of displayPerson()
@@ -163,17 +171,12 @@ function promptFor(question, valid) {
     } while (!response || !valid(response));
     return response;
 }
-// End of promptFor()
 
-/**
- * This helper function checks to see if the value passed into input is a "yes" or "no."
- * @param {String} input        A string that will be normalized via .toLowerCase().
- * @returns {Boolean}           The result of our condition evaluation.
- */
 function yesNo(input) {
     return input.toLowerCase() === "yes" || input.toLowerCase() === "no";
 }
-// End of yesNo()
+
+
 
 /**
  * This helper function operates as a default callback for promptFor's validation.
@@ -393,7 +396,7 @@ function searchByParents(people){
 
     app(people)
 }
-}
+
 
 
 function searchByCurrentSpouse(people){
